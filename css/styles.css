@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Inter", sans-serif;
   background: #0e1823;
@@ -60,6 +64,12 @@ button {
 
 /* #region Header */
 .header .container {
+  position: absolute;
+  top: 32px;
+  left: 50%;
+  z-index: 100;
+  transform: translateX(-50%);
+
   background: #fbfbfb;
   border: 1px solid #fbfbfb;
   border-radius: 8px;
@@ -91,12 +101,14 @@ button {
   width: 91px;
   height: 40px;
   border-radius: 8px;
-  background: rgba(27, 65, 75, 0.5);
+  background-color: rgba(27, 65, 75, 0.5);
+
+  transition: background-color 250ms ease-in;
 }
 
 .nav-link:hover,
 .nav-link:focus {
-  background: #1b414b;
+  background-color: #1b414b;
 }
 .soc-list {
   display: flex;
@@ -111,6 +123,8 @@ button {
   width: 24px;
   height: 24px;
   color: #1b414b;
+
+  transition: color 250ms ease-in;
 }
 
 .soc-link:hover,
@@ -118,12 +132,27 @@ button {
   color: #062730;
 }
 
+.soc-icon {
+  fill: currentColor;
+}
+
 /* #endregion */
 
 /* #region Hero */
 .hero-section {
+  position: relative;
   padding-top: 235px;
   padding-bottom: 180px;
+  background-image: linear-gradient(
+      to top,
+      rgb(17 19 31 / 0.8),
+      rgb(17 19 31 / 0.39) 75%,
+      rgb(17 19 31 / 0) 98%
+    ),
+    url(../images/hero-bg.jpg);
+  background-repeat: no-repeat;
+  width: 1280px;
+  margin: 0 auto;
 }
 .hero-title {
   font-weight: 500;
@@ -152,11 +181,13 @@ button {
   background-color: #1b414b;
   margin: 0 auto;
   width: 179px;
+
+  transition: color 250ms ease-in, background-color 250ms ease-in;
 }
 
 .hero-btn:hover,
 .hero-btn:focus {
-  background: #fbfbfb;
+  background-color: #fbfbfb;
   color: #1b414b;
 }
 /* #endregion */
@@ -209,7 +240,7 @@ button {
 /* #endregion */
 
 /* #region Yahts */
-.yuahts-section {
+.yahts-section {
   padding-top: 150px;
   padding-bottom: 150px;
 }
@@ -237,11 +268,25 @@ button {
 }
 
 .yahts-name-wrapper {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 32px 16px 16px;
-  border-bottom: 1px solid rgba(4, 3, 6, 0.1);
+  /* border-bottom: 1px solid rgba(4, 3, 6, 0.1); */
+}
+.yahts-name-wrapper::after {
+  content: "";
+  display: block;
+
+  position: absolute;
+  bottom: 0;
+  left: 16px;
+
+  width: 313px;
+  height: 1px;
+
+  background-color: rgba(4, 3, 6, 0.1);
 }
 .yahts-item-subtitle {
   font-weight: 500;
@@ -297,6 +342,8 @@ button {
   padding: 16px 40px;
   width: 179px;
   margin: 0 auto;
+
+  transition: color 250ms ease-in, background-color 250ms ease-in;
 }
 
 .yahts-btn:hover,
@@ -331,13 +378,15 @@ button {
   font-size: 32px;
   line-height: 1;
   letter-spacing: -0.05em;
-  margin-bottom: 38px;
+  margin-bottom: 18px;
 }
 .adv-item-text {
   font-size: 13px;
   line-height: 1.15;
   letter-spacing: -0.02em;
   opacity: 0.8;
+  border-top: 1px solid rgba(251, 251, 251, 0.1);
+  padding-top: 20px;
 }
 .adv-img-wrapper {
   border-radius: 24px;
@@ -364,10 +413,70 @@ button {
   overflow: hidden;
 }
 .order-title {
+  margin-bottom: 50px;
   font-weight: 500;
   font-size: 48px;
   line-height: 1;
   letter-spacing: -0.02em;
+}
+
+.order-form {
+  width: 472px;
+}
+.order-label {
+  display: block;
+  margin-bottom: 18px;
+}
+.order-label-ta {
+  display: block;
+  margin-bottom: 50px;
+}
+.order-input {
+  height: 54px;
+}
+.order-textarea {
+  resize: none;
+  height: 116px;
+}
+.order-input,
+.order-textarea {
+  width: 100%;
+  display: block;
+  border: 1px solid rgba(251, 251, 251, 0.2);
+  border-radius: 12px;
+  padding: 18px;
+  background-color: transparent;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.28;
+  color: #fbfbfb;
+}
+.order-input::placeholder,
+.order-textarea::placeholder {
+  color: rgba(251, 251, 251, 0.4);
+}
+.order-form-btn {
+  border-radius: 15px;
+  padding: 18px 75px;
+  width: 194px;
+  height: 56px;
+  background-color: #1b414b;
+  border: none;
+
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #fbfbfb;
+
+  transition: color 250ms ease-in, background-color 250ms ease-in;
+}
+
+.order-form-btn:hover,
+.order-form-btn:focus {
+  background-color: #fbfbfb;
+  color: #1b414b;
 }
 
 /* #endregion */
@@ -419,6 +528,7 @@ button {
   letter-spacing: -0.02em;
   text-align: center;
   color: #040306;
+  margin-bottom: 8px;
 }
 .reviews-item-text {
   font-size: 16px;
@@ -454,6 +564,8 @@ button {
 }
 .footer .nav-link {
   background-color: rgba(251, 251, 251, 0.3);
+
+  transition: background-color 250ms ease-in, color 250ms ease-in;
 }
 
 .footer .nav-link:hover,

@@ -11,6 +11,10 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,12 +26,22 @@
   <body>
     <header class="header">
       <div class="container">
-        <a class="logo" href="./index.html">yachtjet</a>
+        <a
+          class="logo animate__animated animate__backInLeft"
+          href="./index.html"
+          >yachtjet</a
+        >
         <nav class="nav">
           <ul class="nav-list">
-            <li class="nav-item"><a class="nav-link" href="">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="">Yachts</a></li>
-            <li class="nav-item"><a class="nav-link" href="">Reviews</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#yachts">Yachts</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#reviews">Reviews</a>
+            </li>
           </ul>
         </nav>
         <ul class="soc-list">
@@ -37,8 +51,10 @@
               href="https://www.instagram.com/"
               target="_blank"
               aria-label="link to Instagram"
-              >IG</a
-            >
+              ><svg class="soc-icon" width="24" height="24">
+                <use href="./images/icons.svg#instagram"></use>
+              </svg>
+            </a>
           </li>
           <li class="soc-item">
             <a
@@ -46,8 +62,11 @@
               href="https://www.youtube.com/"
               target="_blank"
               aria-label="link to YouTube"
-              >YT</a
             >
+              <svg class="soc-icon" width="24" height="24">
+                <use href="./images/icons.svg#youtube"></use>
+              </svg>
+            </a>
           </li>
           <li class="soc-item">
             <a
@@ -55,8 +74,11 @@
               href="https://www.facebook.com/"
               target="_blank"
               aria-label="link to Facebook"
-              >Fb</a
             >
+              <svg class="soc-icon" width="24" height="24">
+                <use href="./images/icons.svg#facebook"></use>
+              </svg>
+            </a>
           </li>
         </ul>
       </div>
@@ -73,10 +95,10 @@
             unforgettable journey surrounded by breathtaking views and
             state-of-the-art amenities.
           </p>
-          <a class="hero-btn" href="">Yacht rental</a>
+          <a class="hero-btn" href="#order">Yacht rental</a>
         </div>
       </section>
-      <section class="about-section">
+      <section class="about-section" id="about">
         <div class="container">
           <div class="about-container">
             <div class="about-text-wrapper">
@@ -109,7 +131,7 @@
           </div>
         </div>
       </section>
-      <section class="yuahts-section">
+      <section class="yahts-section" id="yachts">
         <div class="container">
           <h2 class="yahts-title">
             Choose your dream yacht and sail away into the sunset
@@ -200,7 +222,7 @@
               </div>
             </li>
           </ul>
-          <a class="yahts-btn" href="">Yacht rental</a>
+          <a class="yahts-btn" href="#order">Yacht rental</a>
         </div>
       </section>
       <section class="advantages">
@@ -246,7 +268,7 @@
           </div>
         </div>
       </section>
-      <section class="order-section">
+      <section class="order-section" id="order">
         <div class="container">
           <div class="order-img-wrapper">
             <img
@@ -256,10 +278,47 @@
               width="658"
             />
           </div>
-          <h2 class="order-title">Rent a yacht now</h2>
+          <div class="order-form-wrapper">
+            <h2 class="order-title">Rent a yacht now</h2>
+            <form class="order-form">
+              <label class="order-label" for="name"
+                ><input
+                  class="order-input"
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Full Name"
+              /></label>
+              <label class="order-label" for="email"
+                ><input
+                  class="order-input"
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Email"
+              /></label>
+              <label class="order-label" for="phone"
+                ><input
+                  class="order-input"
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="Phone number"
+              /></label>
+              <label class="order-label-ta" for="comment">
+                <textarea
+                  class="order-textarea"
+                  id="comment"
+                  name="comment"
+                  placeholder="Comment"
+                ></textarea>
+              </label>
+              <button class="order-form-btn" type="submit">Send</button>
+            </form>
+          </div>
         </div>
       </section>
-      <section class="reviews-section">
+      <section class="reviews-section" id="reviews">
         <div class="container">
           <h2 class="reviews-title">
             YachtJet take pride in providing the best possible service and
@@ -324,9 +383,15 @@
         <div class="footer-first-wrapper">
           <a class="logo-footer" href="./index.html">yachtjet</a>
           <ul class="nav-list">
-            <li class="nav-item"><a class="nav-link" href="">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="">Yachts</a></li>
-            <li class="nav-item"><a class="nav-link" href="">Reviews</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#yachts">Yachts</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#reviews">Reviews</a>
+            </li>
           </ul>
           <ul class="soc-list">
             <li class="soc-item">
@@ -335,8 +400,11 @@
                 href="https://www.instagram.com/"
                 target="_blank"
                 aria-label="link to Instagram"
-                >IG</a
               >
+                <svg class="soc-icon" width="24" height="24">
+                  <use href="./images/icons.svg#instagram"></use>
+                </svg>
+              </a>
             </li>
             <li class="soc-item">
               <a
@@ -344,8 +412,11 @@
                 href="https://www.youtube.com/"
                 target="_blank"
                 aria-label="link to YouTube"
-                >YT</a
               >
+                <svg class="soc-icon" width="24" height="24">
+                  <use href="./images/icons.svg#youtube"></use>
+                </svg>
+              </a>
             </li>
             <li class="soc-item">
               <a
@@ -353,8 +424,11 @@
                 href="https://www.facebook.com/"
                 target="_blank"
                 aria-label="link to Facebook"
-                >Fb</a
               >
+                <svg class="soc-icon" width="24" height="24">
+                  <use href="./images/icons.svg#facebook"></use>
+                </svg>
+              </a>
             </li>
           </ul>
         </div>
