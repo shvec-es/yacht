@@ -25,7 +25,7 @@
   </head>
   <body>
     <header class="header">
-      <div class="container">
+      <div class="header-container">
         <a
           class="logo animate__animated animate__backInLeft"
           href="./index.html"
@@ -81,8 +81,68 @@
             </a>
           </li>
         </ul>
+        <button class="open-menu-btn" type="button">
+          <svg class="open-menu-icon" width="28" height="28">
+            <use href="./images/icons.svg#open-menu"></use>
+          </svg>
+          <svg class="close-menu-icon" width="28" height="28">
+            <use href="./images/icons.svg#close-menu"></use>
+          </svg>
+        </button>
       </div>
     </header>
+    <div class="mobile-menu-wrapper">
+      <nav class="mobile-nav">
+        <ul class="mobile-nav-list">
+          <li class="mobile-nav-item">
+            <a class="mobile-nav-link" href="#about">About</a>
+          </li>
+          <li class="mobile-nav-item">
+            <a class="mobile-nav-link" href="#yachts">Yachts</a>
+          </li>
+          <li class="mobile-nav-item">
+            <a class="mobile-nav-link" href="#reviews">Reviews</a>
+          </li>
+        </ul>
+      </nav>
+      <ul class="mobile-soc-list">
+        <li class="mobile-soc-item">
+          <a
+            class="mobile-soc-link"
+            href="https://www.instagram.com/"
+            target="_blank"
+            aria-label="link to Instagram"
+            ><svg class="mobile-soc-icon" width="24" height="24">
+              <use href="./images/icons.svg#instagram"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="mobile-soc-item">
+          <a
+            class="mobile-soc-link"
+            href="https://www.youtube.com/"
+            target="_blank"
+            aria-label="link to YouTube"
+          >
+            <svg class="mobile-soc-icon" width="24" height="24">
+              <use href="./images/icons.svg#youtube"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="mobile-soc-item">
+          <a
+            class="mobile-soc-link"
+            href="https://www.facebook.com/"
+            target="_blank"
+            aria-label="link to Facebook"
+          >
+            <svg class="mobile-soc-icon" width="24" height="24">
+              <use href="./images/icons.svg#facebook"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
     <main>
       <section class="hero-section">
         <div class="container">
@@ -121,12 +181,34 @@
               </div>
             </div>
             <div class="about-img-wrapper">
-              <img
-                class="about-img"
-                src="./images/about.png"
-                alt="yacht in about us"
-                width="1180"
-              />
+              <picture>
+                <source
+                  media="(min-width: 1280px)"
+                  srcset="
+                    ./images/about/desktop.jpg    1x,
+                    ./images/about/desktop@2x.jpg 2x
+                  "
+                />
+                <source
+                  media="(min-width: 768px)"
+                  srcset="
+                    ./images/about/tablet.jpg    1x,
+                    ./images/about/tablet@2x.jpg 2x
+                  "
+                />
+                <source
+                  media="(max-width: 767px)"
+                  srcset="
+                    ./images/about/mob.jpg    1x,
+                    ./images/about/mob@2x.jpg 2x
+                  "
+                />
+                <img
+                  class="about-img"
+                  src="./images/about/mob.jpg"
+                  alt="yacht in about us"
+                />
+              </picture>
             </div>
           </div>
         </div>
@@ -259,25 +341,39 @@
             </ol>
           </div>
           <div class="adv-img-wrapper">
-            <img
-              class="adv-img"
-              src="./images/features.jpg"
-              alt="yacht in features"
-              width="432"
-            />
+            <picture>
+              <source
+                media="(min-width: 1280px)"
+                srcset="
+                  ./images/advantages/desktop.jpg    1x,
+                  ./images/advantages/desktop@2x.jpg 2x
+                "
+              />
+              <source
+                media="(min-width: 768px)"
+                srcset="
+                  ./images/advantages/tablet.jpg    1x,
+                  ./images/advantages/tablet@2x.jpg 2x
+                "
+              />
+              <source
+                media="(max-width: 767px)"
+                srcset="
+                  ./images/advantages/mob.jpg    1x,
+                  ./images/advantages/mob@2x.jpg 2x
+                "
+              />
+              <img
+                class="adv-img"
+                src="./images/advantages/mob.jpg"
+                alt="yacht in advantages"
+              />
+            </picture>
           </div>
         </div>
       </section>
       <section class="order-section" id="order">
         <div class="container">
-          <div class="order-img-wrapper">
-            <img
-              class="order-img"
-              src="./images/order.jpg"
-              alt="yacht in order"
-              width="658"
-            />
-          </div>
           <div class="order-form-wrapper">
             <h2 class="order-title">Rent a yacht now</h2>
             <form class="order-form">
@@ -315,6 +411,33 @@
               </label>
               <button class="order-form-btn" type="submit">Send</button>
             </form>
+          </div>
+          <div class="order-img-wrapper">
+            <picture>
+              <source
+                media="(min-width: 1280px)"
+                srcset="
+                  ./images/order/desktop.jpg    1x,
+                  ./images/order/desktop@2x.jpg 2x
+                "
+              />
+              <source
+                media="(min-width: 768px)"
+                srcset="
+                  ./images/advantages/tablet.jpg 1x,
+                  ./images/order/tablet@2x.jpg   2x
+                "
+              />
+              <source
+                media="(max-width: 767px)"
+                srcset="./images/order/mob.jpg 1x, ./images/order/mob@2x.jpg 2x"
+              />
+              <img
+                class="order-img"
+                src="./images/order/mob.jpg"
+                alt="yacht in order section"
+              />
+            </picture>
           </div>
         </div>
       </section>
@@ -382,50 +505,50 @@
       <div class="container">
         <div class="footer-first-wrapper">
           <a class="logo-footer" href="./index.html">yachtjet</a>
-          <ul class="nav-list">
-            <li class="nav-item">
-              <a class="nav-link" href="#about">About</a>
+          <ul class="footer-nav-list">
+            <li class="footer-nav-item">
+              <a class="footer-nav-link" href="#about">About</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#yachts">Yachts</a>
+            <li class="footer-nav-item">
+              <a class="footer-nav-link" href="#yachts">Yachts</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#reviews">Reviews</a>
+            <li class="footer-nav-item">
+              <a class="footer-nav-link" href="#reviews">Reviews</a>
             </li>
           </ul>
-          <ul class="soc-list">
-            <li class="soc-item">
+          <ul class="footer-soc-list">
+            <li class="footer-soc-item">
               <a
-                class="soc-link"
+                class="footer-soc-link"
                 href="https://www.instagram.com/"
                 target="_blank"
                 aria-label="link to Instagram"
               >
-                <svg class="soc-icon" width="24" height="24">
+                <svg class="footer-soc-icon" width="24" height="24">
                   <use href="./images/icons.svg#instagram"></use>
                 </svg>
               </a>
             </li>
-            <li class="soc-item">
+            <li class="footer-soc-item">
               <a
-                class="soc-link"
+                class="footer-soc-link"
                 href="https://www.youtube.com/"
                 target="_blank"
                 aria-label="link to YouTube"
               >
-                <svg class="soc-icon" width="24" height="24">
+                <svg class="footer-soc-icon" width="24" height="24">
                   <use href="./images/icons.svg#youtube"></use>
                 </svg>
               </a>
             </li>
-            <li class="soc-item">
+            <li class="footer-soc-item">
               <a
-                class="soc-link"
+                class="footer-soc-link"
                 href="https://www.facebook.com/"
                 target="_blank"
                 aria-label="link to Facebook"
               >
-                <svg class="soc-icon" width="24" height="24">
+                <svg class="footer-soc-icon" width="24" height="24">
                   <use href="./images/icons.svg#facebook"></use>
                 </svg>
               </a>
